@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<meta charset='UTF-8'>
+<title>MidwayUSA Prompt</title>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<link rel='stylesheet' href='/styles.css'>
+<script src='/index.js'></script>
+
+<body onload='initialize()'>
+    <form class='card'>
+        <!-- hours input -->
+        <div id='box-hours' class='pad neutral'>
+            <Input type='number' step='1' min='1' max='12' id='convert-hours' onchange='validateHours(this)' class='input'/>
+            <label>Hours</label>
+            <label id='error-hours' class='invisible right-err'>&#9888; Please try another value &#9888;</label>
+            <label id='ok-hours' class='invisible right-ok'>&#9734; Looking good! &#9734;</label>
+        </div>
+        <div class='spacer'></div>
+        <!-- minutes input -->
+        <div id='box-minutes' class='pad neutral'>
+            <Input type='number' step='1' min='0' max='59' id='convert-minutes' onchange='validateMinutes(this)' class='input'/>
+            <label>Minutes</label>
+            <label id='error-minutes' class='invisible right-err'>&#9888; Please try another value &#9888;</label>
+            <label id='ok-minutes' class='invisible right-ok'>&#9734; Looking good! &#9734;</label>
+        </div>
+        <div class='spacer'></div>
+        <!-- convert button, not using onSubmit here or in the parent form tag for simplicity -->
+        <div id='box-convert' class='pad centered'>
+            <button id='convert-btn' class='button' type='button' onclick='convert()' disabled>Convert</button>
+        </div>
+    </form>
+    <div class='card'>
+        <p id='output' class='display'>Complete the form above...</p>
+    </div>
+</body>
+
+</html>
